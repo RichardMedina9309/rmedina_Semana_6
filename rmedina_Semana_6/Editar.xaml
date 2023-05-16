@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="rmedina_Semana_6.Editar"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="DarkGreen" Padding="24" CornerRadius="0">
+                <Label Text="Editar o Eliminar"  HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Label Text="Codigo:"  />
+            <Entry x:Name="txtCodigo" Placeholder="Ingerese el codigo" Keyboard="Numeric" IsEnabled="False"/>
+            <Label Text="Nombre:" />
+            <Entry x:Name="txtNombre" Placeholder="Ingerese el nombre" />
+            <Label Text="Apellido:" />
+            <Entry x:Name="txtApellido" Placeholder="Ingerese el apellido"/>
+            <Label Text="Edad:" />
+            <Entry x:Name="txtEdad" Placeholder="Ingerese la edad" Keyboard="Numeric"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnEliminar" Text="ELIMINAR" Clicked="btnEliminar_Clicked" Grid.Column="0"/>
+                <Button x:Name="btnModificar" Text="MODIFICAR" Clicked="btnModificar_Clicked" Grid.Column="1"/>
+                <Button x:Name="btnRegresar" Text="REGRESAR" Clicked="btnRegresar_Clicked" Grid.Column="2"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

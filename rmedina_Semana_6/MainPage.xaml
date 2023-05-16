@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="rmedina_Semana_6.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <Frame BackgroundColor="DarkGreen" Padding="24" CornerRadius="0">
+            <Label Text="Lista de registros" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Text="ID" FontSize="20" FontAttributes="Bold, Italic" HorizontalTextAlignment="Center"  Grid.Row="0" Grid.Column="0"/>
+            <Label Text="Nombre" FontSize="20" FontAttributes="Bold, Italic" HorizontalTextAlignment="Center"  Grid.Row="0" Grid.Column="1"/>
+            <Label Text="Apellido" FontSize="20" FontAttributes="Bold, Italic" HorizontalTextAlignment="Center"  Grid.Row="0" Grid.Column="2"/>
+            <Label Text="Edad" FontSize="20" FontAttributes="Bold, Italic" HorizontalTextAlignment="Center"  Grid.Row="0" Grid.Column="3"/>
+        </Grid>
+        <Label Text="------------------------------------------------------------------------------------------"/>
+        <ListView x:Name="lista" ItemSelected="lista_ItemSelected"> 
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="lblId"  Text="{Binding codigo}" Grid.Row="0" Grid.Column="0"/>
+                                <Label x:Name="lblNombre"  Text="{Binding nombre}" Grid.Row="0" Grid.Column="1"/>
+                                <Label x:Name="lblApellido"  Text="{Binding apellido}" Grid.Row="0" Grid.Column="2"/>
+                                <Label x:Name="lblEdad"  Text="{Binding edad}" Grid.Row="0" Grid.Column="3"/>
+                            </Grid>
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button x:Name="btnRegistro" BackgroundColor="DarkGreen" TextColor="White" Text="Nuevo Registro" Clicked="btnRegistro_Clicked"/>
+    </StackLayout>
+
+</ContentPage>
